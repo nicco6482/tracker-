@@ -9,6 +9,7 @@ import ExpenseModal from './components/UI/ExpenseModal'
 import DeleteConfirm from './components/UI/DeleteConfirm'
 import ChatBot from './components/ChatBot/ChatBot'
 import OfflineIndicator from './components/OfflineIndicator'
+import SettingsModal from './components/UI/SettingsModal'
 
 export default function App() {
   const { expenses, addExpense, editExpense, deleteExpense } = useExpenses()
@@ -20,6 +21,7 @@ export default function App() {
   const [currency, setCurrency] = useState<CurrencyCode>('EUR')
   const [apiKey, setApiKey] = useState<string>('')
   const [showApiKeyPrompt, setShowApiKeyPrompt] = useState(false)
+  const [showSettings, setShowSettings] = useState(false)
 
   useEffect(() => {
     const savedApiKey = localStorage.getItem('groq-api-key')
@@ -70,6 +72,7 @@ export default function App() {
         currency={currency}
         setCurrency={setCurrency}
         onAddExpense={openAddModal}
+        onSettings={() => setShowSettings(true)}
       />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {view === 'dashboard' ? (
@@ -169,6 +172,13 @@ export default function App() {
           }}
         />
       )}
+
+      <SettingsModal
+        isOpen={showSettings}
+        onClose={() => setShowSettings(false)}
+        apiKey={apiKey}
+        onApiKeyChange={setApiKey}
+      />
     </div>
   )
 }

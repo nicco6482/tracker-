@@ -1,6 +1,6 @@
 import { View, CurrencyCode, CURRENCIES } from '../../types'
 import { usePWAInstall } from '../../hooks/usePWAInstall'
-import { LayoutDashboard, List, Plus, Wallet, Download } from 'lucide-react'
+import { LayoutDashboard, List, Plus, Wallet, Download, Settings } from 'lucide-react'
 
 interface NavbarProps {
   view: View
@@ -8,9 +8,10 @@ interface NavbarProps {
   currency: CurrencyCode
   setCurrency: (currency: CurrencyCode) => void
   onAddExpense: () => void
+  onSettings: () => void
 }
 
-export default function Navbar({ view, setView, currency, setCurrency, onAddExpense }: NavbarProps) {
+export default function Navbar({ view, setView, currency, setCurrency, onAddExpense, onSettings }: NavbarProps) {
   const { canInstall, install } = usePWAInstall()
 
   return (
@@ -72,6 +73,14 @@ export default function Navbar({ view, setView, currency, setCurrency, onAddExpe
                 <span className="hidden sm:block">Instalar</span>
               </button>
             )}
+
+            <button
+              onClick={onSettings}
+              title="Ajustes"
+              className="flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-700 p-2 rounded-xl transition-colors"
+            >
+              <Settings className="w-4 h-4" />
+            </button>
 
             <button
               onClick={onAddExpense}
