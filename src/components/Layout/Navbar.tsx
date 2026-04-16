@@ -77,9 +77,9 @@ export default function Navbar({ view, setView, currency, setCurrency, onAddExpe
             <button
               onClick={onSettings}
               title="Ajustes"
-              className="flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-700 p-2 rounded-xl transition-colors"
+              className="flex items-center justify-center bg-blue-100 hover:bg-blue-200 text-blue-700 p-2.5 rounded-xl transition-colors border border-blue-300"
             >
-              <Settings className="w-4 h-4" />
+              <Settings className="w-5 h-5" strokeWidth={2} />
             </button>
 
             <button
