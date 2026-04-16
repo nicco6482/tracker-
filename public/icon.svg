@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#7c3aed"/>
+  <!-- Wallet body -->
+  <rect x="88" y="168" width="336" height="224" rx="32" fill="white" fill-opacity="0.95"/>
+  <!-- Top stripe -->
+  <rect x="88" y="208" width="336" height="56" fill="#7c3aed" fill-opacity="0.12"/>
+  <!-- Coin circle -->
+  <circle cx="368" cy="296" r="38" fill="#7c3aed" fill-opacity="0.15"/>
+  <circle cx="368" cy="296" r="20" fill="#7c3aed" fill-opacity="0.35"/>
+  <!-- Card lines -->
+  <rect x="120" y="300" width="140" height="12" rx="6" fill="#7c3aed" fill-opacity="0.3"/>
+  <rect x="120" y="324" width="100" height="10" rx="5" fill="#7c3aed" fill-opacity="0.18"/>
+</svg>
